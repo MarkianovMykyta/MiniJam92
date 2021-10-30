@@ -1,7 +1,6 @@
-﻿using Game.Weapon;
-using UnityEngine;
+﻿using UnityEngine;
 
-namespace Game
+namespace Game.Weapon
 {
 	public class WeaponController : MonoBehaviour
 	{
@@ -15,7 +14,16 @@ namespace Game
 			{
 				if (_weapons[i].WeaponType == weaponType)
 				{
+					
+					if (ActiveWeapon != null)
+					{
+						ActiveWeapon.Deactivate();
+					}
+					
 					ActiveWeapon = _weapons[i];
+					
+					ActiveWeapon.Activate();
+					
 					return;
 				}
 			}

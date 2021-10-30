@@ -3,7 +3,14 @@ namespace Game.Player
 {
 	public class PlayerController : Chicken
 	{
+		[SerializeField] private Team _team;
+		
 		private Vector3 _input;
+
+		protected override void OnStart()
+		{
+			Initialize(_team.TeamId);
+		}
 
 		protected override void OnUpdate()
 		{

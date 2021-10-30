@@ -11,11 +11,12 @@ namespace Game.AI
 		public override void Begin()
 		{
 			Debug.Log("Idle Begin");
+			
+			StateContext.SetNextState(new FollowPlayerState(StateContext));
 		}
 
 		public override void Update()
 		{
-			Debug.Log("Idle Update");
 		}
 
 		public override void End()

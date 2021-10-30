@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _maxHealth: 100
   ChickenController: {fileID: 8729510297506086052}
+  WeaponController: {fileID: 5210869992875096153}
   _moveTarget: {fileID: 0}
   _maxSpeed: 6
   _minSpeed: 10
@@ -102,5 +103,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 113d75425cb4401596250d1434085011, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &5210869992875096153 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8963550354886987534, guid: c8bec19bc40522c4dbf7104f4f8d0094,
+    type: 3}
+  m_PrefabInstance: {fileID: 3761727422321555287}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2512104990032181895}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e35b97fd2bc427faa0e4bcc4f2b07f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

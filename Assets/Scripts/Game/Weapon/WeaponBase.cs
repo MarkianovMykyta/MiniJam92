@@ -9,6 +9,7 @@ namespace Game.Weapon
 		[SerializeField] private float _damage;
 		[SerializeField] private Animator _animator;
 		[SerializeField] private string _attackAnimationTrigger;
+		[SerializeField] private GameObject[] _weaponObjects;
 
 		private float _prevAttackTime;
 
@@ -24,6 +25,22 @@ namespace Game.Weapon
 				_animator.SetTrigger(_attackAnimationTrigger);
 
 				_prevAttackTime = Time.time;
+			}
+		}
+
+		public void Activate()
+		{
+			for (var i = 0; i < _weaponObjects.Length; i++)
+			{
+				_weaponObjects[i].SetActive(true);
+			}
+		}
+
+		public void Deactivate()
+		{
+			for (var i = 0; i < _weaponObjects.Length; i++)
+			{
+				_weaponObjects[i].SetActive(false);
 			}
 		}
 	}

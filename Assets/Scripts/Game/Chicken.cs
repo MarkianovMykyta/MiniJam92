@@ -6,19 +6,23 @@ namespace Game
 {
 	public class Chicken : MonoBehaviour, IDestructible
 	{
+		public event Action<Chicken> Died; 
+
 		[SerializeField] private float _maxHealth;
 		[SerializeField] protected ChickenController ChickenController;
 		[SerializeField] protected WeaponController WeaponController;
-		[SerializeField] private int _teamId;
-		
+
 		public float Health {get;  private set; }
 
 		public bool IsAlive => Health > 0;
 
-		public int TeamId
+		public int TeamId { get; private set; }
+
+		public virtual void Initialize(int teamId)
 		{
-			get => _teamId;
-			set => _teamId = value;
+			Health = _maxHealth;
+			TeamId = teamId;
+			WeaponController.SetWeapon(WeaponType.None);
 		}
 
 		public void ApplyDamage(float damage)
@@ -35,8 +39,6 @@ namespace Game
 
 		private void Start()
 		{
-			Health = _maxHealth;
-
 			OnStart();
 		}
 
@@ -55,6 +57,7 @@ namespace Game
 			if(!IsAlive) return;
 			
 			ChickenController.PlayDeathAnimation(DestroyAfterDeath);
+			Died?.Invoke(this);
 		}
 
 		private void DestroyAfterDeath()
