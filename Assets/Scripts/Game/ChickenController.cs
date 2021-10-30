@@ -19,7 +19,7 @@ namespace Game
 		[SerializeField] private NavMeshAgent _agent;
 		[Space]
 		[SerializeField] private float _deathAnimationTime;
-
+		
 		public void SetSpeedLimit(float maxSpeed)
 		{
 			_agent.speed = maxSpeed;

@@ -1,4 +1,5 @@
 ﻿using System;
+using Game.Weapon;
 using UnityEngine;
 
 namespace Game
@@ -7,13 +8,23 @@ namespace Game
 	{
 		[SerializeField] private float _maxHealth;
 		[SerializeField] protected ChickenController ChickenController;
+		[SerializeField] protected WeaponController WeaponController;
+		[SerializeField] private int _teamId;
 		
-		public float Health { private set; get; }
+		public float Health {get;  private set; }
 
 		public bool IsAlive => Health > 0;
-		
+
+		public int TeamId
+		{
+			get => _teamId;
+			set => _teamId = value;
+		}
+
 		public void ApplyDamage(float damage)
 		{
+			if(!IsAlive) return;
+			
 			Health = Mathf.Max(0, Health - damage);
 
 			if (Health == 0)
@@ -21,7 +32,7 @@ namespace Game
 				Die();
 			}
 		}
-		
+
 		private void Start()
 		{
 			Health = _maxHealth;
@@ -31,6 +42,8 @@ namespace Game
 
 		private void Update()
 		{
+			if (!IsAlive) return;
+			
 			OnUpdate();
 		}
 
@@ -39,6 +52,8 @@ namespace Game
 		
 		private void Die()
 		{
+			if(!IsAlive) return;
+			
 			ChickenController.PlayDeathAnimation(DestroyAfterDeath);
 		}
 
@@ -46,5 +61,7 @@ namespace Game
 		{
 			Destroy(gameObject);
 		}
+		
+		
 	}
 }
