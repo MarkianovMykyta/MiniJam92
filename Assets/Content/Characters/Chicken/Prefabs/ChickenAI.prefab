@@ -16,6 +16,8 @@ MonoBehaviour:
   ChickenController: {fileID: 8729510297506086052}
   WeaponController: {fileID: 5210869992875096153}
   Inventory: {fileID: 32635960627435974}
+  _eggPrefab: {fileID: 4517629620280170689, guid: 1c55028ac8c2e1a4aa0f6c7f12801766,
+    type: 3}
   _healthView: {fileID: 8121867211074219857}
   _maxSpeed: 6
   _minSpeed: 10

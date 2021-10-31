@@ -5,12 +5,11 @@ namespace Game.Player
 {
 	public class PlayerController : Chicken
 	{
-		[SerializeField] private Team _team;
 		[SerializeField] private GameOverPopup _gameOverPopup;
 		
 		private Vector3 _input;
 
-		protected override void OnAwake()
+		protected override void OnStart()
 		{
 			WeaponController.SetWeapon(WeaponType.Spear);
 		}

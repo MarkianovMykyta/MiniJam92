@@ -12,6 +12,7 @@ namespace Game
 		[SerializeField] protected ChickenController ChickenController;
 		[SerializeField] protected WeaponController WeaponController;
 		[SerializeField] protected Inventory Inventory;
+		[SerializeField] private GameObject _eggPrefab;
 		
 		[SerializeField] private HealthView _healthView;
 
@@ -83,6 +84,8 @@ namespace Game
 		{
 			Destroy(gameObject);
 			Destroy(_healthView.gameObject);
+
+			Instantiate(_eggPrefab, transform.position, Quaternion.identity);
 		}
 	}
 }

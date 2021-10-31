@@ -16,8 +16,11 @@ MonoBehaviour:
   ChickenController: {fileID: 5276207703553072995}
   WeaponController: {fileID: 8668605785029008286}
   Inventory: {fileID: 3489827458018523649}
+  _eggPrefab: {fileID: 4517629620280170689, guid: 1c55028ac8c2e1a4aa0f6c7f12801766,
+    type: 3}
   _healthView: {fileID: 4659821111141960854}
   _team: {fileID: 0}
+  _gameOverPopup: {fileID: 0}
 --- !u!1001 &300050701941298320
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -22,6 +22,8 @@ namespace Game.Weapon
 		public void Initialize(Team team)
 		{
 			Team = team;
+
+			_cooldownTime += Random.Range(-0.3f, 0.3f);
 		}
 
 		public void Attack()

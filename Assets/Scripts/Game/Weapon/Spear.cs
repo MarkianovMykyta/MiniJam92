@@ -18,6 +18,8 @@ namespace Game.Weapon
 		{
 			await Task.Delay(TimeSpan.FromSeconds(_damageTime));
 			
+			if(this == null) return;
+			
 			Debug.Log("Attack!");
 			
 			var size = Physics.OverlapSphereNonAlloc(_damagePosition.position, _damageRadius, _attackCollidersCash);
