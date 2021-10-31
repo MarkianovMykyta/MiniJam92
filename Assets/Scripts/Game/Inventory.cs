@@ -24,6 +24,17 @@ namespace Game
 			_teamId = teamId;
 		}
 
+		public void Activate()
+		{
+			ThrowAway();
+			gameObject.SetActive(true);
+		}
+		
+		public void Deactivate()
+		{
+			gameObject.SetActive(false);
+		}
+
 		public void ThrowAway()
 		{
 			if (IsEmpty) return;

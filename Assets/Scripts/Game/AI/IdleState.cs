@@ -1,4 +1,6 @@
 ﻿using Game.AI.EggSearch;
+using Game.AI.Fight;
+using Game.Weapon;
 using UnityEngine;
 
 namespace Game.AI
@@ -11,7 +13,18 @@ namespace Game.AI
 
 		public override void Begin()
 		{
-			StateContext.SetNextState(new SearchForEggState(StateContext));
+			if (Random.value > 0.5f)
+			{
+				StateContext.SetNextState(new SearchForEggState(StateContext));
+			}
+			else
+			{
+				StateContext.Inventory.Deactivate();
+				StateContext.WeaponController.SetWeapon(WeaponType.Spear);
+				StateContext.SetNextState(new SearchForEnemyState(StateContext));
+			}
+
+			
 		}
 
 		public override void Update()

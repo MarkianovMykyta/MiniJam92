@@ -2,7 +2,7 @@
 
 namespace Game.Weapon
 {
-	public class WeaponBase : MonoBehaviour
+	public abstract class WeaponBase : MonoBehaviour
 	{
 		[SerializeField] private float _cooldownTime;
 		[SerializeField] private float _radius;
@@ -13,19 +13,32 @@ namespace Game.Weapon
 
 		private float _prevAttackTime;
 
-		public virtual WeaponType WeaponType { get; private set; }
+		public abstract WeaponType WeaponType { get; }
 		public float Radius => _radius;
 		public float Damage => _damage;
+		
+		public Team Team { get; private set; }
+
+		public void Initialize(Team team)
+		{
+			Team = team;
+		}
 
 		public void Attack()
 		{
 			if (Time.time > _prevAttackTime + _cooldownTime)
 			{
-				Debug.Log("Attack");
 				_animator.SetTrigger(_attackAnimationTrigger);
 
 				_prevAttackTime = Time.time;
+				
+				OnAttackStarted();
 			}
+		}
+
+		protected virtual void OnAttackStarted()
+		{
+			
 		}
 
 		public void Activate()

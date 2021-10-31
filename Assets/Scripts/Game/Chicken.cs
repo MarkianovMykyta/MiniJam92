@@ -12,6 +12,8 @@ namespace Game
 		[SerializeField] protected ChickenController ChickenController;
 		[SerializeField] protected WeaponController WeaponController;
 		[SerializeField] protected Inventory Inventory;
+		
+		[SerializeField] private HealthView _healthView;
 
 		public float Health {get;  private set; }
 
@@ -23,8 +25,11 @@ namespace Game
 		{
 			Health = _maxHealth;
 			Team = team;
-			WeaponController.SetWeapon(WeaponType.None);
-			ChickenController.SetTeamMaterial(Team.TeamMaterial);
+			WeaponController.Initialize(team);
+			ChickenController.SetTeamMaterial(team.TeamMaterial);
+			Inventory.Initialize(team.TeamId);
+			
+			_healthView.Activate();
 		}
 
 		public void ApplyDamage(float damage)
@@ -33,10 +38,17 @@ namespace Game
 			
 			Health = Mathf.Max(0, Health - damage);
 
+			_healthView.UpdateValue(Health/_maxHealth);
+			
 			if (Health == 0)
 			{
 				Die();
 			}
+		}
+
+		private void Awake()
+		{
+			OnAwake();
 		}
 
 		private void Start()
@@ -51,22 +63,26 @@ namespace Game
 			OnUpdate();
 		}
 
+		protected virtual void OnAwake(){}
 		protected virtual void OnStart(){}
 		protected virtual void OnUpdate(){}
+		protected virtual void OnDie(){}
 		
 		private void Die()
 		{
-			if(!IsAlive) return;
-			
+			_healthView.Deactivate();
+			ChickenController.StopMoving();
 			ChickenController.PlayDeathAnimation(DestroyAfterDeath);
+			Inventory.ThrowAway();
 			Died?.Invoke(this);
+			
+			OnDie();
 		}
 
 		private void DestroyAfterDeath()
 		{
 			Destroy(gameObject);
+			Destroy(_healthView.gameObject);
 		}
-		
-		
 	}
 }

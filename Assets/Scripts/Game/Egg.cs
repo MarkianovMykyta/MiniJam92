@@ -10,8 +10,7 @@ namespace Game
 		[SerializeField] private float _timeForSpawn;
 		[SerializeField] private Chicken _chickenPrefab;
 		[SerializeField] private Rigidbody _rb;
-		[SerializeField] private Slider _progressbar;
-		[SerializeField] private Animator _uiAnimator;
+		[SerializeField] private HealthView _healthView;
 
 		private readonly List<Chicken> _chickensTargetedOnThisEgg = new List<Chicken>();
 		
@@ -20,11 +19,6 @@ namespace Game
 		public Team Team { get; private set; }
 		
 		private float _timeForSpawnLeft;
-
-		private void Start()
-		{
-			_uiAnimator.transform.SetParent(null);
-		}
 
 		public void PickUp()
 		{
@@ -64,15 +58,14 @@ namespace Game
 			Team = team;
 			IsSpawning = true;
 			
-			_uiAnimator.gameObject.SetActive(true);
-			_uiAnimator.SetTrigger("Appear");
+			_healthView.Activate();
 		}
 
 		private void StopSpawning()
 		{
 			IsSpawning = false;
 
-			_uiAnimator.SetTrigger("Disappear");
+			_healthView.Deactivate();
 		}
 
 		private void Update()
@@ -81,8 +74,7 @@ namespace Game
 
 			_timeForSpawnLeft -= Time.deltaTime;
 
-			_progressbar.value = Mathf.Clamp01(1f - _timeForSpawnLeft / _timeForSpawn);
-			_progressbar.transform.parent.position = transform.position;
+			_healthView.UpdateValue(1f - _timeForSpawnLeft / _timeForSpawn);
 
 			if (_timeForSpawnLeft <= 0)
 			{
@@ -97,7 +89,7 @@ namespace Game
 			var chicken = Instantiate(_chickenPrefab, transform.position, Quaternion.identity);
 			Team.AddChicken(chicken);
 
-			Destroy(_uiAnimator.gameObject);
+			Destroy(_healthView.gameObject);
 			Destroy(gameObject);
 		}
 

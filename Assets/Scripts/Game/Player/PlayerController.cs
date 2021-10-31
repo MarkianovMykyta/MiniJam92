@@ -1,15 +1,18 @@
-﻿using UnityEngine;
+﻿using Game.UI;
+using Game.Weapon;
+using UnityEngine;
 namespace Game.Player
 {
 	public class PlayerController : Chicken
 	{
 		[SerializeField] private Team _team;
+		[SerializeField] private GameOverPopup _gameOverPopup;
 		
 		private Vector3 _input;
 
-		protected override void OnStart()
+		protected override void OnAwake()
 		{
-			Initialize(_team);
+			WeaponController.SetWeapon(WeaponType.Spear);
 		}
 
 		protected override void OnUpdate()
@@ -44,6 +47,11 @@ namespace Game.Player
 			{
 				Inventory.ThrowAway();
 			}
+		}
+
+		protected override void OnDie()
+		{
+			_gameOverPopup.Open();
 		}
 	}
 }

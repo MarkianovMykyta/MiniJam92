@@ -13,7 +13,7 @@ namespace Game.AI
 		{
 			base.Initialize(team);
 			
-			_stateContext = new StateContext(this, ChickenController, Inventory);
+			_stateContext = new StateContext(this, ChickenController, Inventory, WeaponController);
 			_stateContext.SetNextState(new IdleState(_stateContext));
 		}
 

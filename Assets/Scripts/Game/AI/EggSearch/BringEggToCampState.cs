@@ -25,7 +25,7 @@ namespace Game.AI.EggSearch
 			    _throwDistance)
 			{
 				StateContext.Inventory.ThrowAway();
-				StateContext.SetNextState(new IdleState(StateContext));
+				StateContext.SetNextState(new SearchForEggState(StateContext));
 			}
 			else
 			{
