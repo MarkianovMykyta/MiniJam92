@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e75f8f739af9414a8849e0f81e4fcd35, type: 3}
   m_Name: GameSettings
   m_EditorClassIdentifier: 
-  MaxNumberOfChickens: 0
+  MaxNumberOfChickens: 10

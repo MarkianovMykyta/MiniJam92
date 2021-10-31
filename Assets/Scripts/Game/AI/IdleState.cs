@@ -15,6 +15,8 @@ namespace Game.AI
 		{
 			if (Random.value > 0.5f)
 			{
+				StateContext.Inventory.Activate();
+				StateContext.WeaponController.SetWeapon(WeaponType.None);
 				StateContext.SetNextState(new SearchForEggState(StateContext));
 			}
 			else

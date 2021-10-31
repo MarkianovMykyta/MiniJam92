@@ -7,8 +7,8 @@ namespace Game
 	{
 		[SerializeField] private GameObject _eggPrefab;
 		[SerializeField] private float _spawnRadius;
-		[SerializeField] private int _eggsCount;
 		[SerializeField] private float _delayBetweenSpawns;
+		[SerializeField] private GameSettings _gameSettings;
 		
 		private void Start()
 		{
@@ -17,11 +17,12 @@ namespace Game
 
 		private IEnumerator SpawnEggsRoutine()
 		{
-			for (var i = 0; i < _eggsCount; i++)
+			var eggsCount = _gameSettings.MaxNumberOfChickens;
+			for (var i = 0; i < eggsCount; i++)
 			{
 				var spawnPosition = transform.position;
-				spawnPosition.x = Random.Range(-_spawnRadius, _spawnRadius);
-				spawnPosition.z = Random.Range(-_spawnRadius, _spawnRadius);
+				spawnPosition.x += Random.Range(-_spawnRadius, _spawnRadius);
+				spawnPosition.z += Random.Range(-_spawnRadius, _spawnRadius);
 				Instantiate(_eggPrefab, spawnPosition, Quaternion.identity);
 				yield return new WaitForSeconds(_delayBetweenSpawns);
 			}

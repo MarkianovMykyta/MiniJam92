@@ -1,5 +1,4 @@
-﻿using System;
-using System.Threading.Tasks;
+﻿using System.Collections;
 using UnityEngine;
 
 namespace Game.Weapon
@@ -14,13 +13,17 @@ namespace Game.Weapon
 		
 		public override WeaponType WeaponType => WeaponType.Spear;
 
-		protected override async void OnAttackStarted()
+		protected override void OnAttackStarted()
 		{
-			await Task.Delay(TimeSpan.FromSeconds(_damageTime));
-			
-			if(this == null) return;
-			
-			Debug.Log("Attack!");
+			StartCoroutine(AttackRoutine());
+		}
+
+
+		private IEnumerator AttackRoutine()
+		{
+			yield return new WaitForSeconds(_damageTime);
+
+			if (!IsActive) yield break;
 			
 			var size = Physics.OverlapSphereNonAlloc(_damagePosition.position, _damageRadius, _attackCollidersCash);
 
@@ -33,10 +36,12 @@ namespace Game.Weapon
 				}
 			}
 		}
-
+		
+		#if UNITY_EDITOR
 		private void OnDrawGizmos()
 		{
 			Gizmos.DrawWireSphere(_damagePosition.position, _damageRadius);
 		}
+		#endif
 	}
 }

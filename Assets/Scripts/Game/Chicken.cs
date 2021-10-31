@@ -75,6 +75,7 @@ namespace Game
 			ChickenController.StopMoving();
 			ChickenController.PlayDeathAnimation(DestroyAfterDeath);
 			Inventory.ThrowAway();
+			WeaponController.ActiveWeapon.Deactivate();
 			Died?.Invoke(this);
 			
 			OnDie();

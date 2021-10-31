@@ -24,6 +24,7 @@ namespace Game.AI
 
 		protected override void OnUpdate()
 		{
+			if (!IsAlive) return;
 			_stateContext.Update();
 		}
 	}

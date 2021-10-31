@@ -12,6 +12,8 @@ namespace Game.Weapon
 		[SerializeField] private GameObject[] _weaponObjects;
 
 		private float _prevAttackTime;
+		
+		public bool IsActive { get; private set; }
 
 		public abstract WeaponType WeaponType { get; }
 		public float Radius => _radius;
@@ -49,6 +51,8 @@ namespace Game.Weapon
 			{
 				_weaponObjects[i].SetActive(true);
 			}
+
+			IsActive = true;
 		}
 
 		public void Deactivate()
@@ -57,6 +61,8 @@ namespace Game.Weapon
 			{
 				_weaponObjects[i].SetActive(false);
 			}
+
+			IsActive = false;
 		}
 	}
 }
