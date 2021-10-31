@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: da790b21418b070489d870a1b2fc87b0
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Gila
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 89fd3030e54090248999aaafaa0de0df, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
