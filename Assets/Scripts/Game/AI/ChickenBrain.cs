@@ -9,11 +9,11 @@ namespace Game.AI
 
 		private StateContext _stateContext;
 
-		public override void Initialize(int teamId)
+		public override void Initialize(Team team)
 		{
-			base.Initialize(teamId);
+			base.Initialize(team);
 			
-			_stateContext = new StateContext(this, ChickenController);
+			_stateContext = new StateContext(this, ChickenController, Inventory);
 			_stateContext.SetNextState(new IdleState(_stateContext));
 		}
 

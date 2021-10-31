@@ -4,13 +4,15 @@
 	{
 		public ChickenBrain ChickenBrain { get; private set; }
 		public ChickenController ChickenController { get; private set; }
+		public Inventory Inventory { get; private set; }
 		
 		private StateBase _currentState;
 
-		public StateContext(ChickenBrain chickenBrain, ChickenController chickenController)
+		public StateContext(ChickenBrain chickenBrain, ChickenController chickenController, Inventory inventory)
 		{
 			ChickenBrain = chickenBrain;
 			ChickenController = chickenController;
+			Inventory = inventory;
 		}
 
 		public void Update()

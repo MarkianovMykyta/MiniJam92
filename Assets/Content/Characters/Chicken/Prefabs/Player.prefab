@@ -15,6 +15,8 @@ MonoBehaviour:
   _maxHealth: 100
   ChickenController: {fileID: 5276207703553072995}
   WeaponController: {fileID: 8668605785029008286}
+  Inventory: {fileID: 3489827458018523649}
+  _team: {fileID: 0}
 --- !u!1001 &300050701941298320
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -142,5 +144,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4e35b97fd2bc427faa0e4bcc4f2b07f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &3489827458018523649 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3767161115504045713, guid: c8bec19bc40522c4dbf7104f4f8d0094,
+    type: 3}
+  m_PrefabInstance: {fileID: 300050701941298320}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 624b41e0eceb47a8b2d2c90c7e5d0b24, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

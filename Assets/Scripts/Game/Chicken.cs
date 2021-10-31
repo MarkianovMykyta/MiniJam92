@@ -11,17 +11,18 @@ namespace Game
 		[SerializeField] private float _maxHealth;
 		[SerializeField] protected ChickenController ChickenController;
 		[SerializeField] protected WeaponController WeaponController;
+		[SerializeField] protected Inventory Inventory;
 
 		public float Health {get;  private set; }
 
 		public bool IsAlive => Health > 0;
 
-		public int TeamId { get; private set; }
+		public Team Team { get; private set; }
 
-		public virtual void Initialize(int teamId)
+		public virtual void Initialize(Team team)
 		{
 			Health = _maxHealth;
-			TeamId = teamId;
+			Team = team;
 			WeaponController.SetWeapon(WeaponType.None);
 		}
 

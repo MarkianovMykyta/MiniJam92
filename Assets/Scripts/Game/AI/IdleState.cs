@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Game.AI.EggSearch;
+using UnityEngine;
 
 namespace Game.AI
 {
@@ -10,9 +11,7 @@ namespace Game.AI
 
 		public override void Begin()
 		{
-			Debug.Log("Idle Begin");
-			
-			StateContext.SetNextState(new FollowPlayerState(StateContext));
+			StateContext.SetNextState(new SearchForEggState(StateContext));
 		}
 
 		public override void Update()
@@ -21,7 +20,6 @@ namespace Game.AI
 
 		public override void End()
 		{
-			Debug.Log("Idle End");
 		}
 	}
 }

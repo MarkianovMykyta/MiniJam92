@@ -9,16 +9,17 @@ namespace Game.Player
 
 		protected override void OnStart()
 		{
-			Initialize(_team.TeamId);
+			Initialize(_team);
 		}
 
 		protected override void OnUpdate()
 		{
-			Move();
-			Attack();
+			MoveInput();
+			AttackInput();
+			InventoryInput();
 		}
 
-		private void Move()
+		private void MoveInput()
 		{
 			_input = new Vector3(Input.GetAxis("Horizontal"),0, Input.GetAxis("Vertical"));
 
@@ -26,7 +27,7 @@ namespace Game.Player
 			ChickenController.PlayMoveAnimation(_input.magnitude);
 		}
 
-		private void Attack()
+		private void AttackInput()
 		{
 			if (Input.GetButtonDown("Attack"))
 			{
@@ -34,6 +35,14 @@ namespace Game.Player
 				{
 					WeaponController.ActiveWeapon.Attack();
 				}
+			}
+		}
+
+		private void InventoryInput()
+		{
+			if (Input.GetButtonDown("Jump"))
+			{
+				Inventory.ThrowAway();
 			}
 		}
 	}

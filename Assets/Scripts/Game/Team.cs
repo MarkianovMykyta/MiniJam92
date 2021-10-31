@@ -13,7 +13,7 @@ namespace Game
 
 		public void AddChicken(Chicken chicken)
 		{
-			chicken.Initialize(TeamId);
+			chicken.Initialize(this);
 			
 			_teamChickens.Add(chicken);
 
