@@ -19,6 +19,8 @@ namespace Game
 		[SerializeField] private NavMeshAgent _agent;
 		[Space]
 		[SerializeField] private float _deathAnimationTime;
+
+		[SerializeField] private MeshRenderer[] _teamSpecificObjects;
 		
 		public void SetSpeedLimit(float maxSpeed)
 		{
@@ -60,6 +62,14 @@ namespace Game
 			await Task.Delay(TimeSpan.FromSeconds(_deathAnimationTime));
 
 			animationCompletedCallback?.Invoke();
+		}
+
+		public void SetTeamMaterial(Material teamMaterial)
+		{
+			for (var i = 0; i < _teamSpecificObjects.Length; i++)
+			{
+				_teamSpecificObjects[i].material = teamMaterial;
+			}
 		}
 	}
 }

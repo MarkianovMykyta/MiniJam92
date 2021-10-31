@@ -26,6 +26,15 @@ namespace Game.AI.EggSearch
 
 			if (_targetEgg != null)
 			{
+				if (_targetEgg.IsPickedUp) _targetEgg = null;
+				else
+				{
+					StateContext.ChickenController.PlayMoveAnimation();
+				}
+			}
+			else
+			{
+				StateContext.ChickenController.StopMoving();
 				StateContext.ChickenController.PlayMoveAnimation();
 			}
 		}
@@ -60,7 +69,7 @@ namespace Game.AI.EggSearch
 			for (var i = 0; i < eggs.Length; i++)
 			{
 				var egg = eggs[i];
-				if(egg.IsPickedUp || egg.IsSpawning) continue;
+				if(egg.IsPickedUp || egg.IsSpawning && egg.Team.TeamId == StateContext.ChickenBrain.Team.TeamId) continue;
 				if(egg != _targetEgg && !egg.IsEggFreeForTeam(StateContext.ChickenBrain.Team.TeamId)) continue;
 
 				var distance = Vector3.Distance(StateContext.ChickenBrain.transform.position, egg.transform.position);

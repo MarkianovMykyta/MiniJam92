@@ -24,6 +24,7 @@ namespace Game
 			Health = _maxHealth;
 			Team = team;
 			WeaponController.SetWeapon(WeaponType.None);
+			ChickenController.SetTeamMaterial(Team.TeamMaterial);
 		}
 
 		public void ApplyDamage(float damage)

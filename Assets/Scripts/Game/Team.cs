@@ -6,10 +6,21 @@ namespace Game
 	public class Team : MonoBehaviour
 	{
 		[SerializeField] private int _teamId;
+		[SerializeField] private Material _teamMaterial;
+		[SerializeField] private Chicken[] _predefinedTeamMembers;
 		
 		public int TeamId => _teamId;
+		public Material TeamMaterial => _teamMaterial;
 
 		private readonly List<Chicken> _teamChickens = new List<Chicken>();
+
+		private void Start()
+		{
+			for (var i = 0; i < _predefinedTeamMembers.Length; i++)
+			{
+				AddChicken(_predefinedTeamMembers[i]);
+			}
+		}
 
 		public void AddChicken(Chicken chicken)
 		{

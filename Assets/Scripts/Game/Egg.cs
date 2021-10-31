@@ -95,10 +95,8 @@ namespace Game
 			IsSpawning = false;
 			
 			var chicken = Instantiate(_chickenPrefab, transform.position, Quaternion.identity);
-			chicken.Initialize(Team);
-
 			Team.AddChicken(chicken);
-			
+
 			Destroy(_uiAnimator.gameObject);
 			Destroy(gameObject);
 		}

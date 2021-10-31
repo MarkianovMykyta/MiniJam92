@@ -504,6 +504,8 @@ MonoBehaviour:
   _animator: {fileID: 548197737729201749}
   _agent: {fileID: 3411897157678131902}
   _deathAnimationTime: 1
+  _teamSpecificObjects:
+  - {fileID: 3597852892143085396}
 --- !u!114 &8963550354886987534
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1036,7 +1038,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 80fc53cac1348284fa959dd98303e5f3, type: 2}
+  - {fileID: 2100000, guid: e7a0729235a6fb347906e99700bc8578, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
