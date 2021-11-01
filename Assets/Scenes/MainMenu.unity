@@ -342,7 +342,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 899ca3e2e4d866344b332a54be946f26, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7fdaa9cee85eb1242bb0defa04a366b7, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2448,7 +2448,19 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Chicken Loop - game prohect made for Mini Jam event. \n"
+  m_text: "Chicken Loop - game project made for Mini Jam event. \r\n\r\nNote: that
+    this game is far from completeting and there are may be a lot of bugs.\r\nThis
+    is prototype version that I have made for 2 days.\r\n\r\nControls:\nWASD - move\nSpace
+    - Drop Egg (if you have one)\nCtrl or LMB - Attack\nEsc - Pause menu\nYou also
+    can use gamepad (At leat from XBox). Menus might not support it though... \n\nRules:\r\nThere
+    are 3 teams of chickens. Each have own camp (fire). You need to find eggs and
+    bring them closer to the fire in your camp to spawn new team members.\r\n\r\nFrom
+    eggs can be spawned two types of chicken - Warrior (with a spear) and egg courier.
+    Chances are 50/50. Courier only looking for eggs and can't fight. Warrior only
+    fight and can't take an egg. Only you can do both.\r\n\r\nGame ends when one
+    team left or when you die.\r\n\r\nMusic was taken from these sites:\r\n\"Epic
+    Battle\" by Twin Musicom (twinmusicom.org)\r\nand \r\n\"Curious Squirell\" from
+    Zapsplat.com"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ceeed1aeda20ce6428278964395804d8, type: 2}
   m_sharedMaterial: {fileID: 1564235795351687540, guid: ceeed1aeda20ce6428278964395804d8,
@@ -4205,8 +4217,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1954939275}
   m_HandleRect: {fileID: 1954939274}
   m_Direction: 2
-  m_Value: 0.9999998
-  m_Size: 0.4533905
+  m_Value: 0.9999999
+  m_Size: 0.34952188
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -5578,7 +5590,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0.00013360906}
-  m_SizeDelta: {x: 0, y: 1155.1666}
+  m_SizeDelta: {x: 0, y: 1498.4515}
   m_Pivot: {x: 0, y: 1}
 --- !u!1 &1433313634
 GameObject:
@@ -6947,7 +6959,7 @@ RectTransform:
   m_Father: {fileID: 2070664686}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.5466094}
+  m_AnchorMin: {x: 0, y: 0.65047807}
   m_AnchorMax: {x: 1, y: 0.99999976}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 20}
