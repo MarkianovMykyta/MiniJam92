@@ -4,7 +4,7 @@ namespace Game.AI
 {
 	public class StateContext
 	{
-		// ENCAPSULATION
+		// ENCAPSULATIONS
 		public ChickenBrain ChickenBrain { get; private set; }
 		public ChickenController ChickenController { get; private set; }
 		public Inventory Inventory { get; private set; }

@@ -44,12 +44,7 @@ namespace Game.Weapon
 				OnAttackStarted();
 			}
 		}
-
-		protected virtual void OnAttackStarted()
-		{
-			
-		}
-
+		
 		// ABSTRACTION
 		public void Activate()
 		{
@@ -70,6 +65,10 @@ namespace Game.Weapon
 			}
 
 			IsActive = false;
+		}
+		
+		protected virtual void OnAttackStarted()
+		{
 		}
 	}
 }
