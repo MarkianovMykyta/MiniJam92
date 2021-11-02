@@ -2,6 +2,7 @@
 
 namespace Game.AI
 {
+	// INHERITANCE
 	public class FollowPlayerState : StateBase
 	{
 		private Transform _player;
@@ -11,11 +12,13 @@ namespace Game.AI
 		{
 		}
 
+		// POLYMORPHISM
 		public override void Begin()
 		{
 			Debug.Log("Follow Player Begin");
 		}
 
+		// POLYMORPHISM
 		public override void Update()
 		{
 			if (_player == null)
@@ -28,6 +31,7 @@ namespace Game.AI
 			StateContext.ChickenController.PlayMoveAnimation();
 		}
 
+		// POLYMORPHISM
 		public override void End()
 		{
 			Debug.Log("Follow Player End");

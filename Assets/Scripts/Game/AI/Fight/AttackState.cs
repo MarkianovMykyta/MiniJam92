@@ -2,6 +2,7 @@
 
 namespace Game.AI.Fight
 {
+	// INHERITANCE
 	public class AttackState : StateBase
 	{
 		private readonly Chicken _attackTarget;
@@ -10,11 +11,12 @@ namespace Game.AI.Fight
 		{
 			_attackTarget = attackTarget;
 		}
-
+		
 		public override void Begin()
 		{
 		}
 
+		// POLYMORPHISM
 		public override void Update()
 		{
 			if (_attackTarget == null ||

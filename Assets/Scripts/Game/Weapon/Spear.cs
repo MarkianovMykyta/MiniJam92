@@ -3,6 +3,7 @@ using UnityEngine;
 
 namespace Game.Weapon
 {
+	// INHERITANCE
 	public class Spear : WeaponBase
 	{
 		[SerializeField] private Transform _damagePosition;
@@ -11,6 +12,7 @@ namespace Game.Weapon
 
 		private readonly Collider[] _attackCollidersCash = new Collider[10];
 		
+		// POLYMORPHISM
 		public override WeaponType WeaponType => WeaponType.Spear;
 
 		protected override void OnAttackStarted()

@@ -7,6 +7,7 @@ namespace Game.Menu
 	{
 		[SerializeField] private PauseMenu _pauseMenu;
 
+		// ENCAPSULATION
 		public bool IsPaused { get; private set; }
 
 

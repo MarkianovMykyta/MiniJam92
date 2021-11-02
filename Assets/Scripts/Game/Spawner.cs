@@ -7,6 +7,7 @@ namespace Game
 	{
 		[SerializeField] private Team _team;
 		[SerializeField] private SpriteRenderer _radiusRenderer;
+		// ENCAPSULATION
 		public Team Team => _team;
 
 		private void Start()

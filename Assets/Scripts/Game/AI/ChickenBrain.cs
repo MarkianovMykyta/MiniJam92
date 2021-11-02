@@ -2,6 +2,7 @@
 
 namespace Game.AI
 {
+	// INHERITANCE
 	public class ChickenBrain : Chicken
 	{
 		[SerializeField] private float _maxSpeed;
@@ -9,6 +10,7 @@ namespace Game.AI
 
 		private StateContext _stateContext;
 
+		// POLYMORPHISM
 		public override void Initialize(Team team)
 		{
 			base.Initialize(team);
@@ -17,6 +19,7 @@ namespace Game.AI
 			_stateContext.SetNextState(new IdleState(_stateContext));
 		}
 
+		// POLYMORPHISM
 		protected override void OnStart()
 		{
 			ChickenController.SetSpeedLimit(Random.Range(_minSpeed, _maxSpeed));

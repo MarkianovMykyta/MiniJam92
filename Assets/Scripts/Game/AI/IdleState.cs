@@ -5,12 +5,14 @@ using UnityEngine;
 
 namespace Game.AI
 {
+	// INHERITANCE
 	public class IdleState : StateBase
 	{
 		public IdleState(StateContext stateContext) : base(stateContext)
 		{
 		}
 
+		// POLYMORPHISM
 		public override void Begin()
 		{
 			if (Random.value > 0.5f)

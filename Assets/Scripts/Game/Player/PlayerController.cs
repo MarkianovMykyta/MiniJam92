@@ -3,19 +3,23 @@ using Game.Weapon;
 using UnityEngine;
 namespace Game.Player
 {
+	// INHERITANCE
 	public class PlayerController : Chicken
 	{
 		[SerializeField] private GameOverPopup _gameOverPopup;
 		
 		private Vector3 _input;
 
+		// POLYMORPHISM
 		protected override void OnStart()
 		{
 			WeaponController.SetWeapon(WeaponType.Spear);
 		}
 
+		// POLYMORPHISM
 		protected override void OnUpdate()
 		{
+			// ABSTRACTION
 			MoveInput();
 			AttackInput();
 			InventoryInput();
@@ -48,6 +52,7 @@ namespace Game.Player
 			}
 		}
 
+		// POLYMORPHISM
 		protected override void OnDie()
 		{
 			_gameOverPopup.Open();

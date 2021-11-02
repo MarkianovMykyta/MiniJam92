@@ -3,6 +3,7 @@ using UnityEngine;
 
 namespace Game.AI.EggSearch
 {
+	// INHERITANCE
 	public class SearchForEggState : StateBase
 	{
 		private float _delayBetweenEggSearch = 3f;
@@ -15,11 +16,13 @@ namespace Game.AI.EggSearch
 		{
 		}
 
+		// POLYMORPHISM
 		public override void Begin()
 		{
 			StateContext.Inventory.PickedUp += OnEggPickedUp;
 		}
 
+		// POLYMORPHISM
 		public override void Update()
 		{
 			SearchForEgg();
@@ -39,6 +42,7 @@ namespace Game.AI.EggSearch
 			}
 		}
 
+		// POLYMORPHISM
 		public override void End()
 		{
 			StateContext.ChickenController.StopMoving();

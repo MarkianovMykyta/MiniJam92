@@ -6,6 +6,7 @@ namespace Game.Weapon
 	{
 		[SerializeField] private WeaponBase[] _weapons;
 
+		// ENCAPSULATION
 		public WeaponBase ActiveWeapon { get; private set; }
 
 		public void Initialize(Team team)
@@ -18,6 +19,7 @@ namespace Game.Weapon
 			SetWeapon(WeaponType.None);
 		}
 		
+		// ABSTRACTION
 		public void SetWeapon(WeaponType weaponType)
 		{
 			if (ActiveWeapon != null)

@@ -12,8 +12,11 @@ namespace Game
 		[SerializeField] private Material _teamMaterial;
 		[SerializeField] private Chicken[] _predefinedTeamMembers;
 		
+		// ENCAPSULATION
 		public int TeamId => _teamId;
+		// ENCAPSULATION
 		public Material TeamMaterial => _teamMaterial;
+		// ENCAPSULATION
 		public int TeamSize => _teamChickens.Count;
 
 		private readonly List<Chicken> _teamChickens = new List<Chicken>();
@@ -26,6 +29,7 @@ namespace Game
 			}
 		}
 
+		// ABSTRACTION
 		public void AddChicken(Chicken chicken)
 		{
 			chicken.Initialize(this);
@@ -37,6 +41,7 @@ namespace Game
 			TeamSizeChanged?.Invoke();
 		}
 
+		// ABSTRACTION
 		public void RemoveChicken(Chicken chicken)
 		{
 			chicken.Died -= RemoveChicken;

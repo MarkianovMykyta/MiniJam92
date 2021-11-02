@@ -17,6 +17,7 @@ namespace Game
 		
 		private readonly List<Egg> _eggsToIgnore = new List<Egg>();
 		
+		// ENCAPSULATION
 		public bool IsEmpty => _egg == null;
 
 		public void Initialize(int teamId)
@@ -35,6 +36,7 @@ namespace Game
 			gameObject.SetActive(false);
 		}
 
+		// ABSTRACTION
 		public void ThrowAway()
 		{
 			if (IsEmpty) return;

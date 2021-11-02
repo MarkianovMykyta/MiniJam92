@@ -3,6 +3,7 @@ using UnityEngine;
 
 namespace Game.AI.Fight
 {
+	// INHERITANCE
 	public class SearchForEnemyState : StateBase
 	{
 		private float _delayBetweenEnemiesSearch = 3f;
@@ -20,6 +21,7 @@ namespace Game.AI.Fight
 			
 		}
 
+		// POLYMORPHISM
 		public override void Update()
 		{
 			SearchForEnemy();
@@ -46,6 +48,7 @@ namespace Game.AI.Fight
 			}
 		}
 
+		// POLYMORPHISM
 		public override void End()
 		{
 			StateContext.ChickenController.StopMoving();

@@ -2,6 +2,7 @@
 
 namespace Game.AI.EggSearch
 {
+	// INHERITANCE
 	public class BringEggToCampState : StateBase
 	{
 		private float _throwDistance = 3f;
@@ -12,11 +13,13 @@ namespace Game.AI.EggSearch
 
 		private Spawner _targetSpawner;
 
+		// POLYMORPHISM
 		public override void Begin()
 		{
 			SearchForSpawner();
 		}
 
+		// POLYMORPHISM
 		public override void Update()
 		{
 			if(_targetSpawner == null) return;
@@ -33,6 +36,7 @@ namespace Game.AI.EggSearch
 			}
 		}
 
+		// POLYMORPHISM
 		public override void End()
 		{
 			_targetSpawner = null;

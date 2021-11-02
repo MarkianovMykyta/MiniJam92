@@ -15,7 +15,9 @@ namespace Game
 		private readonly List<Chicken> _chickensTargetedOnThisEgg = new List<Chicken>();
 		
 		public bool IsPickedUp;
+		// ENCAPSULATION
 		public bool IsSpawning { get; private set; }
+		// ENCAPSULATION
 		public Team Team { get; private set; }
 		
 		private float _timeForSpawnLeft;

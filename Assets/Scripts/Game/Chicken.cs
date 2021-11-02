@@ -16,10 +16,13 @@ namespace Game
 		
 		[SerializeField] private HealthView _healthView;
 
+		// ENCAPSULATION
 		public float Health {get;  private set; }
 
+		// ENCAPSULATION
 		public bool IsAlive => Health > 0;
 
+		// ENCAPSULATION
 		public Team Team { get; private set; }
 
 		public virtual void Initialize(Team team)
@@ -33,6 +36,7 @@ namespace Game
 			_healthView.Activate();
 		}
 
+		// ABSTRACTION
 		public void ApplyDamage(float damage)
 		{
 			if(!IsAlive) return;
@@ -69,6 +73,7 @@ namespace Game
 		protected virtual void OnUpdate(){}
 		protected virtual void OnDie(){}
 		
+		// ABSTRACTION
 		private void Die()
 		{
 			_healthView.Deactivate();

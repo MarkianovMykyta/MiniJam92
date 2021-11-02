@@ -13,12 +13,16 @@ namespace Game.Weapon
 
 		private float _prevAttackTime;
 		
+		// ENCAPSULATION
 		public bool IsActive { get; private set; }
 
+		// ENCAPSULATION
 		public abstract WeaponType WeaponType { get; }
+		// ENCAPSULATION
 		public float Radius => _radius;
+		// ENCAPSULATION
 		public float Damage => _damage;
-		
+		// ENCAPSULATION
 		public Team Team { get; private set; }
 
 		public void Initialize(Team team)
@@ -28,6 +32,7 @@ namespace Game.Weapon
 			_cooldownTime += Random.Range(-0.3f, 0.3f);
 		}
 
+		// ABSTRACTION
 		public void Attack()
 		{
 			if (Time.time > _prevAttackTime + _cooldownTime)
@@ -45,6 +50,7 @@ namespace Game.Weapon
 			
 		}
 
+		// ABSTRACTION
 		public void Activate()
 		{
 			for (var i = 0; i < _weaponObjects.Length; i++)
@@ -55,6 +61,7 @@ namespace Game.Weapon
 			IsActive = true;
 		}
 
+		// ABSTRACTION
 		public void Deactivate()
 		{
 			for (var i = 0; i < _weaponObjects.Length; i++)
